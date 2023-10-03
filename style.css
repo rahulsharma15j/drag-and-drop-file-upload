@@ -1,0 +1,107 @@
+/* Import Google Font 'Montserrat' */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap");
+
+/* common variables */
+:root {
+  /* colors */
+  --primary: #005792;
+  --secondary: #2192ff;
+  --secondary-dark: #0284fd;
+  --light: #ffffff;
+  --danger: #f45050;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--primary);
+}
+
+.drop-area {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 500px;
+  height: 320px;
+  border-radius: 15px;
+  color: var(--light);
+  font-size: 1.7rem;
+  font-weight: 600;
+  overflow: hidden;
+  border: 2px dashed var(--light);
+}
+
+.drop-area.active {
+  border: 2px solid var(--light);
+}
+
+.drop-area i {
+  font-size: 6rem;
+  margin-bottom: 1rem;
+}
+
+.drop-area p {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.drop-area span {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.drop-area button {
+  padding: 10px 1.5rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--light);
+  background-color: var(--secondary);
+  text-decoration: none;
+  border: 1px solid var(--secondary);
+  cursor: pointer;
+  transition: text-decoration 0.2s ease, background-color 0.2s ease,
+    border 0.2s ease;
+}
+
+.drop-area button:hover {
+  border: 1px solid var(--secondary-dark);
+  background-color: var(--secondary-dark);
+}
+
+.drop-area span a:hover {
+  text-decoration: underline;
+}
+
+.drop-area img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* CSS if error occurred */
+.drop-area.error {
+  color: var(--danger);
+  border: 2px dashed var(--danger);
+}
+
+.drop-area.error p {
+  padding: 0 4rem;
+  margin-bottom: 2rem;
+}
+
+.drop-area.error span {
+  display: none;
+}
